@@ -1,11 +1,16 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import type { ButtonProps } from '../../src';
 import { Button } from '../../src';
 
-export default {
+const meta = {
     title: 'Button',
     component: Button,
-};
+} satisfies Meta<ButtonProps>;
 
-export const Primary = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
     parameters: {
         layout: 'centered',
     },
@@ -22,6 +27,7 @@ export const Primary = {
             control: 'select',
             options: ['primary', 'secondary', 'success', 'error', 'info', 'warning'],
         },
+
         loaderVariant: {
             control: 'select',
             options: ['default'],

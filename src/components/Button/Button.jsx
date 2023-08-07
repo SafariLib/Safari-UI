@@ -1,7 +1,6 @@
 'use client';
 
 import { Button as MUIButton } from '@mui/material';
-import React from 'react';
 import { classNames } from '../../utils';
 
 const { SafariUIButton } = classNames;

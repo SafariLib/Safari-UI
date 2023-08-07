@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import { classNames } from '../../utils';
 import { SafariLoader } from './Loader.styled';
 import { Ellipsis, EllipsisRolling, Ring, Roller, RollerTrailing, Spinner } from './variants';

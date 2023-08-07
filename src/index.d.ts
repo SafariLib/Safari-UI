@@ -1,1 +1,4 @@
-export type { default as Button, ButtonProps } from './components/Button/ButtonProps';
+export { default as Button } from './components/Button';
+export type { ButtonProps } from './components/Button';
+export { default as Loader } from './components/Loader';
+export type { LoaderProps } from './components/Loader';

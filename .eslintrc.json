@@ -1,13 +1,7 @@
 {
     "plugins": ["prefer-arrow"],
     "rules": {
-        "prefer-const": [
-            "error",
-            {
-                "destructuring": "all",
-                "ignoreReadBeforeAssign": false
-            }
-        ],
+        "no-var": "error",
         "prefer-arrow/prefer-arrow-functions": [
             "error",
             {

@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import { classNames } from '../../../../utils';
 import { SpinnerDot, SpinnerWrapper } from './Spinner.styled';
 

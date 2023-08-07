@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import { classNames } from '../../../../utils';
 import { EllipsisRollingWrapper } from './EllipsisRolling.styled';
 
