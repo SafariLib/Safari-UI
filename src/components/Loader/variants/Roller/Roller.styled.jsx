@@ -1,12 +1,17 @@
-.SafariUI-loader {
-    & .SafariUI-loader-roller {
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+export const RollerWrapper = styled('div')(
+    props => css`
         display: inline-block;
         position: relative;
         width: 80px;
         height: 80px;
-    }
+    `,
+);
 
-    & .SafariUI-loader-roller-dot {
+export const RollerDot = styled('div')(
+    props => css`
         transform-origin: 40px 40px;
         animation: SafariUI-loader-roller-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 
@@ -84,14 +89,14 @@
                 left: 12px;
             }
         }
-    }
-}
 
-@keyframes SafariUI-loader-roller-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        @keyframes SafariUI-loader-roller-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    `,
+);

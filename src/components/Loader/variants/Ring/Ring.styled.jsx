@@ -1,12 +1,17 @@
-.SafariUI-loader {
-    & .SafariUI-loader-ring {
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+export const RingWrapper = styled('div')(
+    props => css`
         display: inline-block;
         position: relative;
         width: 80px;
         height: 80px;
-    }
+    `,
+);
 
-    & .SafariUI-loader-ring-trail {
+export const RingTrail = styled('div')(
+    props => css`
         box-sizing: border-box;
         display: block;
         position: absolute;
@@ -29,14 +34,14 @@
         &::nth-child(3) {
             animation-delay: -0.15s;
         }
-    }
-}
 
-@keyframes SafariUI-loader-ring-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        @keyframes SafariUI-loader-ring-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    `,
+);

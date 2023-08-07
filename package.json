@@ -1,15 +1,16 @@
 {
     "name": "@safari-lib/safari-ui",
-    "description": "Simple component library for React Web development using CSS only",
-    "version": "0.1.0",
+    "author": "BenoitSafari",
+    "description": "Simple component library for React/NextJS Web development using MUI",
+    "version": "0.1.1",
     "license": "MIT",
-    "main": "dist/index.js",
-    "module": "dist/index.esm.js",
-    "types": "dist/index.d.ts",
+    "module": "src/index.js",
+    "types": "src/index.d.ts",
     "readme": "README.md",
     "files": [
         "README.md",
-        "dist"
+        "LICENSE",
+        "src"
     ],
     "engines": {
         "node": ">=16.0.0"
@@ -26,16 +27,17 @@
     "scripts": {
         "dev": "storybook dev -p 6006",
         "test": "echo \"No test specified\"",
-        "build": "npm run clean-build && rollup -c",
         "build-storybook": "storybook build",
-        "clean-build": "rimraf dist",
         "clean-node": "rimraf node_modules && npm i",
-        "deploy": "npm run build && npm publish --access public && npm run clean-build"
+        "deploy": "npm publish --access public"
     },
     "devDependencies": {
-        "@rollup/plugin-commonjs": "^25.0.3",
-        "@rollup/plugin-json": "^6.0.0",
-        "@rollup/plugin-node-resolve": "^15.1.0",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@fontsource/material-icons": "^5.0.7",
+        "@fontsource/roboto": "^5.0.8",
+        "@mui/icons-material": "^5.14.3",
+        "@mui/material": "^5.14.3",
         "@storybook/addon-actions": "^7.2.1",
         "@storybook/addon-essentials": "^7.2.1",
         "@storybook/addon-interactions": "^7.2.1",
@@ -47,10 +49,6 @@
         "@storybook/react-vite": "^7.2.1",
         "@types/react": "^18.2.18",
         "@types/react-dom": "^18.2.7",
-        "@types/rollup-plugin-peer-deps-external": "^2.2.1",
-        "@typescript-eslint/eslint-plugin": "^6.2.1",
-        "@typescript-eslint/parser": "^6.2.1",
-        "classnames": "^2.3.2",
         "eslint": "^8.46.0",
         "eslint-config-prettier": "^8.10.0",
         "eslint-config-react-app": "^7.0.1",
@@ -58,16 +56,14 @@
         "eslint-plugin-storybook": "^0.6.13",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "rollup": "^3.27.2",
-        "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-postcss": "^4.0.2",
-        "rollup-plugin-typescript2": "^0.35.0",
-        "sass": "^1.64.2",
         "storybook": "^7.2.1",
-        "tslib": "^2.6.1",
         "typescript": "^5.1.6"
     },
     "peerDependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.14.3",
+        "@mui/material": "^5.14.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     }

@@ -1,5 +1,8 @@
-.SafariUI-loader {
-    & .SafariUI-loader-ellipsisRolling {
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+export const EllipsisRollingWrapper = styled('div')(
+    props => css`
         width: 16px;
         height: 16px;
         border-radius: 50%;
@@ -25,11 +28,11 @@
             animation: SafariUI-loader-ellipsisRolling-rotate 1s ease infinite;
             animation-delay: 0.5s;
         }
-    }
-}
 
-@keyframes SafariUI-loader-ellipsisRolling-rotate {
-    100% {
-        transform: rotate(360deg) translate(30px);
-    }
-}
+        @keyframes SafariUI-loader-ellipsisRolling-rotate {
+            100% {
+                transform: rotate(360deg) translate(30px);
+            }
+        }
+    `,
+);

@@ -1,13 +1,18 @@
-.SafariUI-loader {
-    & .SafariUI-loader-spinner {
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+export const SpinnerWrapper = styled('div')(
+    props => css`
         color: official;
         display: inline-block;
         position: relative;
         width: 80px;
         height: 80px;
-    }
+    `,
+);
 
-    & .SafariUI-loader-spinner-dot {
+export const SpinnerDot = styled('div')(
+    props => css`
         transform-origin: 40px 40px;
         animation: SafariUI-loader-spinner 1.2s linear infinite;
 
@@ -82,14 +87,14 @@
             transform: rotate(330deg);
             animation-delay: 0s;
         }
-    }
-}
 
-@keyframes SafariUI-loader-spinner {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+        @keyframes SafariUI-loader-spinner {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    `,
+);

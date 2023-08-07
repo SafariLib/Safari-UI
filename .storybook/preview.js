@@ -1,7 +1,11 @@
+import '@fontsource/material-icons';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import type { Preview } from '@storybook/react';
 
-const preview: Preview = {
+export default {
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {
@@ -24,5 +28,3 @@ const preview: Preview = {
         },
     },
 };
-
-export default preview;

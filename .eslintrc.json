@@ -1,12 +1,6 @@
 {
-    "plugins": ["@typescript-eslint", "prefer-arrow"],
-    "parserOptions": {
-        "tsconfigRootDir": "./",
-        "project": ["./tsconfig.json"]
-    },
+    "plugins": ["prefer-arrow"],
     "rules": {
-        "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/prefer-for-of": "warn",
         "prefer-const": [
             "error",
             {
@@ -14,10 +8,6 @@
                 "ignoreReadBeforeAssign": false
             }
         ],
-        "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-        "@typescript-eslint/consistent-type-exports": "error",
-        "@typescript-eslint/consistent-type-imports": "warn",
-        "@typescript-eslint/no-namespace": "off",
         "prefer-arrow/prefer-arrow-functions": [
             "error",
             {
@@ -49,11 +39,5 @@
             }
         ]
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "react-app",
-        "plugin:storybook/recommended"
-    ]
+    "extends": ["eslint:recommended", "prettier", "react-app", "plugin:storybook/recommended"]
 }

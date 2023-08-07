@@ -1,15 +1,13 @@
-import type { StorybookConfig } from '@storybook/react-vite';
-
 /**
  * Storybook API Builder configuration
  * @see https://storybook.js.org/docs/react/builders/vite
  */
-const config: StorybookConfig = {
+export default {
     framework: {
         name: '@storybook/react-vite',
         options: {},
     },
-    stories: ['../src/**/*.stories.@(ts|tsx)', '../src/**/*.stories.mdx'],
+    stories: ['./stories/**/*.stories.@(js|jsx)', './stories/**/*.stories.mdx'],
     addons: [
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
@@ -17,9 +15,4 @@ const config: StorybookConfig = {
         '@storybook/addon-styling',
         '@storybook/addon-actions',
     ],
-    typescript: {
-        reactDocgen: 'react-docgen',
-    },
 };
-
-export default config;
