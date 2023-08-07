@@ -2,7 +2,8 @@
     "name": "@safari-lib/safari-ui",
     "author": "BenoitSafari",
     "description": "Simple component library for React/NextJS Web development using MUI",
-    "version": "0.1.1",
+    "version": "0.0.3",
+    "homepage": "https://github.com/SafariLib/Safari-UI",
     "license": "MIT",
     "module": "src/index.js",
     "types": "src/index.d.ts",
@@ -22,7 +23,10 @@
     "keywords": [
         "next",
         "react",
-        "ui"
+        "ui",
+        "component",
+        "library",
+        "interface"
     ],
     "scripts": {
         "dev": "storybook dev -p 6006",
