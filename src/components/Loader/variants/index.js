@@ -1,6 +1,6 @@
-export { default as Ellipsis } from './Ellipsis/Ellipsis';
-export { default as EllipsisRolling } from './EllipsisRolling/EllipsisRolling';
-export { default as Ring } from './Ring/Ring';
-export { default as Roller } from './Roller/Roller';
-export { default as RollerTrailing } from './RollerTrailing/RollerTrailing';
-export { default as Spinner } from './Spinner/Spinner';
+export { EllipsisDot, EllipsisWrapper } from './Ellipsis.styled';
+export { EllipsisRollingWrapper } from './EllipsisRolling.styled';
+export { RingTrail, RingWrapper } from './Ring.styled';
+export { RollerDot, RollerWrapper } from './Roller.styled';
+export { RollerTrailingWrapper } from './RollerTrailing.styled';
+export { SpinnerDot, SpinnerWrapper } from './Spinner.styled';

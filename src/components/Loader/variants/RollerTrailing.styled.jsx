@@ -4,8 +4,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const RollerTrailingWrapper = styled('div')(
-    props => css`
-        color: #ffffff;
+    ({ size, color }) => css`
+        color: ${color};
         font-size: 45px;
         text-indent: -9999em;
         overflow: hidden;

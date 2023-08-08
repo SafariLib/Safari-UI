@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const RollerWrapper = styled('div')(
-    props => css`
+    ({ size }) => css`
         display: inline-block;
         position: relative;
         width: 80px;
@@ -13,22 +13,22 @@ export const RollerWrapper = styled('div')(
 );
 
 export const RollerDot = styled('div')(
-    props => css`
+    ({ size, color }) => css`
         transform-origin: 40px 40px;
         animation: SafariUI-loader-roller-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 
-        &::after {
+        &:after {
             content: ' ';
             display: block;
             position: absolute;
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: #fff;
+            background: ${color};
             margin: -4px 0 0 -4px;
         }
 
-        &::nth-child(1) {
+        &:nth-child(1) {
             animation-delay: -0.036s;
             &::after {
                 top: 63px;
@@ -36,7 +36,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(2) {
+        &:nth-child(2) {
             animation-delay: -0.072s;
             &::after {
                 top: 68px;
@@ -44,7 +44,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(3) {
+        &:nth-child(3) {
             animation-delay: -0.108s;
             &::after {
                 top: 71px;
@@ -52,7 +52,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(4) {
+        &:nth-child(4) {
             animation-delay: -0.144s;
             &::after {
                 top: 72px;
@@ -60,7 +60,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(5) {
+        &:nth-child(5) {
             animation-delay: -0.18s;
             &::after {
                 top: 71px;
@@ -68,7 +68,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(6) {
+        &:nth-child(6) {
             animation-delay: -0.216s;
             &::after {
                 top: 68px;
@@ -76,7 +76,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(7) {
+        &:nth-child(7) {
             animation-delay: -0.252s;
             &::after {
                 top: 63px;
@@ -84,7 +84,7 @@ export const RollerDot = styled('div')(
             }
         }
 
-        &::nth-child(8) {
+        &:nth-child(8) {
             animation-delay: -0.288s;
             &::after {
                 top: 56px;

@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const RingWrapper = styled('div')(
-    props => css`
+    ({ size }) => css`
         display: inline-block;
         position: relative;
         width: 80px;
@@ -13,27 +13,27 @@ export const RingWrapper = styled('div')(
 );
 
 export const RingTrail = styled('div')(
-    props => css`
+    ({ size, color }) => css`
         box-sizing: border-box;
         display: block;
         position: absolute;
         width: 64px;
         height: 64px;
         margin: 8px;
-        border: 8px solid #fff;
+        border: 8px solid ${color};
         border-radius: 50%;
         animation: SafariUI-loader-ring-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #fff transparent transparent transparent;
+        border-color: ${color} transparent transparent transparent;
 
-        &::nth-child(1) {
+        &:nth-child(1) {
             animation-delay: -0.45s;
         }
 
-        &::nth-child(2) {
+        &:nth-child(2) {
             animation-delay: -0.3s;
         }
 
-        &::nth-child(3) {
+        &:nth-child(3) {
             animation-delay: -0.15s;
         }
 

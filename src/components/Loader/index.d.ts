@@ -1,6 +1,15 @@
 export interface LoaderProps {
-    size?: 'small' | 'medium' | 'large' | undefined;
+    size?: 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | undefined;
     variant?: 'ellipsis' | 'EllipsisRolling' | 'spinner' | 'roller' | 'roller-trailing' | 'ring' | undefined;
+    color?:
+        | 'primary'
+        | 'secondary'
+        | 'success'
+        | 'warning'
+        | 'error'
+        | 'info'
+        | React.CSSProperties['color']
+        | undefined;
 }
 
 /**
