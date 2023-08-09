@@ -12,7 +12,6 @@ export const classNames = {
     SafariUILoaderSpinnerDot: 'SafariUI-loader-spinner-dot',
     SafariUILoaderRoller: 'SafariUI-loader-roller',
     SafariUILoaderRollerDot: 'SafariUI-loader-roller-dot',
-    SafariUILoaderRollerTrailing: 'SafariUI-loader-rollerTrailing',
     SafariUILoaderRing: 'SafariUI-loader-ring',
     SafariUILoaderRingTrail: 'SafariUI-loader-ring-trail',
 };

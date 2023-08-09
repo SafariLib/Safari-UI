@@ -21,11 +21,15 @@ export const Primary: Story = {
         },
         variant: {
             control: 'select',
-            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'rollerTrailing', 'ring'],
+            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'ring'],
+        },
+        color: {
+            control: 'color',
         },
     },
     args: {
         size: 'medium',
         variant: 'ring',
+        color: 'primary',
     },
 };

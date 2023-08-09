@@ -1,39 +1,38 @@
 'use client';
 
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css, styled } from '@mui/material';
 
 export const RingWrapper = styled('div')(
-    props => css`
+    ({ size }) => css`
         display: inline-block;
         position: relative;
-        width: 80px;
-        height: 80px;
+        width: ${Math.round(size)}px;
+        height: ${Math.round(size)}px;
     `,
 );
 
 export const RingTrail = styled('div')(
-    props => css`
+    ({ size, color }) => css`
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: 64px;
-        height: 64px;
-        margin: 8px;
-        border: 8px solid #fff;
+        width: ${Math.round(size * 0.8)}px;
+        height: ${Math.round(size * 0.8)}px;
+        margin: ${Math.round(size * 0.1)}px;
+        border: ${Math.round(size * 0.075)}px solid ${color};
         border-radius: 50%;
         animation: SafariUI-loader-ring-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #fff transparent transparent transparent;
+        border-color: ${color} transparent transparent transparent;
 
-        &::nth-child(1) {
+        &:nth-child(1) {
             animation-delay: -0.45s;
         }
 
-        &::nth-child(2) {
+        &:nth-child(2) {
             animation-delay: -0.3s;
         }
 
-        &::nth-child(3) {
+        &:nth-child(3) {
             animation-delay: -0.15s;
         }
 

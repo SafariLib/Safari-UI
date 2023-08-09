@@ -2,7 +2,7 @@ import type { ButtonProps as MUIButtonProps } from '@mui/material';
 
 export interface ButtonProps extends MUIButtonProps {
     isLoading?: boolean | undefined;
-    loaderVariant?: 'default' | undefined;
+    loaderVariant?: 'ellipsis' | 'EllipsisRolling' | 'spinner' | 'roller' | 'ring' | undefined;
 }
 
 /**
