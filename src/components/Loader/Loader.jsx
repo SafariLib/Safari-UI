@@ -1,14 +1,12 @@
 'use client';
 
-import { useTheme } from '@mui/material';
+import { CircularProgress, useTheme } from '@mui/material';
 import { classNames, isHexColor } from '../../utils';
 import {
     EllipsisDot,
     EllipsisRollingWrapper,
     EllipsisWrapper,
     LoaderWrapper,
-    RingTrail,
-    RingWrapper,
     RollerDot,
     RollerWrapper,
     SpinnerDot,
@@ -20,8 +18,6 @@ const {
     SafariUILoaderEllipsis,
     SafariUILoaderEllipsisDot,
     SafariUILoaderEllipsisRolling,
-    SafariUILoaderRing,
-    SafariUILoaderRingTrail,
     SafariUILoaderRoller,
     SafariUILoaderRollerDot,
     SafariUILoaderSpinner,
@@ -29,13 +25,12 @@ const {
 } = classNames;
 
 // FIXME: Some variants does not render well on small values.
-// - Ring
 // - Roller
 
 /**
  * @typedef {Object} LoaderProps
  * @property {'small' | 'medium' | 'large' | number} [size]
- * @property {'ellipsis' | 'ellipsisRolling' | 'spinner' | 'roller' | 'ring'} [variant]
+ * @property {'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller'} [variant]
  * @property {'primary'| 'secondary' | 'success' | 'warning' | 'error' | 'info' | React.CSSProperties['color']}
  */
 
@@ -59,6 +54,15 @@ const Loader = ({ variant = 'ring', size = 'medium', color = 'primary' }) => {
                 return 80;
         }
     })();
+
+    const colorMatchesVariant = (() =>
+        color === 'primary' ||
+        color === 'secondary' ||
+        color === 'success' ||
+        color === 'warning' ||
+        color === 'error' ||
+        color === 'info')();
+
     const colorInHex = (() => {
         switch (color) {
             case 'primary':
@@ -91,7 +95,7 @@ const Loader = ({ variant = 'ring', size = 'medium', color = 'primary' }) => {
                     <EllipsisDot size={sizeInPixels} color={colorInHex} className={SafariUILoaderEllipsisDot} />
                 </EllipsisWrapper>
             )}
-            {variant === 'ellipsisRolling' && (
+            {variant === 'ellipsis-rolling' && (
                 <EllipsisRollingWrapper
                     size={sizeInPixels}
                     color={colorInHex}
@@ -126,13 +130,8 @@ const Loader = ({ variant = 'ring', size = 'medium', color = 'primary' }) => {
                     <RollerDot size={sizeInPixels} color={colorInHex} className={SafariUILoaderRollerDot} />
                 </RollerWrapper>
             )}
-            {variant === 'ring' && (
-                <RingWrapper size={sizeInPixels} className={SafariUILoaderRing}>
-                    <RingTrail size={sizeInPixels} color={colorInHex} className={SafariUILoaderRingTrail} />
-                    <RingTrail size={sizeInPixels} color={colorInHex} className={SafariUILoaderRingTrail} />
-                    <RingTrail size={sizeInPixels} color={colorInHex} className={SafariUILoaderRingTrail} />
-                    <RingTrail size={sizeInPixels} color={colorInHex} className={SafariUILoaderRingTrail} />
-                </RingWrapper>
+            {variant === 'default' && (
+                <CircularProgress color={colorMatchesVariant ? color : 'inherit'} size={sizeInPixels} />
             )}
         </LoaderWrapper>
     );

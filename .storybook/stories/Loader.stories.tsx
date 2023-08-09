@@ -21,7 +21,7 @@ export const Primary: Story = {
         },
         variant: {
             control: 'select',
-            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'ring'],
+            options: ['default', 'ellipsis', 'ellipsis-rolling', 'spinner', 'roller'],
         },
         color: {
             control: 'color',
@@ -29,7 +29,7 @@ export const Primary: Story = {
     },
     args: {
         size: 'medium',
-        variant: 'ring',
+        variant: 'default',
         color: 'primary',
     },
 };

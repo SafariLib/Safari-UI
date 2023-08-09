@@ -10,7 +10,7 @@ const { SafariUIButton } = classNames;
 /**
  * @typedef {Object} ButtonProps
  * @property {boolean} [isLoading]
- * @property {'ellipsis' | 'ellipsisRolling' | 'spinner' | 'roller' | 'ring'} [loaderVariant]
+ * @property {'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller'} [loaderVariant]
  * @property {React.ReactNode} [children]
  */
 
@@ -18,7 +18,7 @@ const { SafariUIButton } = classNames;
  * @param {ButtonProps}
  * @returns {JSX.Element}
  */
-const Button = ({ children, isLoading, loaderVariant, ...props }) => {
+const Button = ({ children, isLoading, loaderVariant = 'default', ...props }) => {
     const { palette, typography } = useTheme();
     const remValue = typography.fontSize ?? 16;
 
@@ -28,7 +28,17 @@ const Button = ({ children, isLoading, loaderVariant, ...props }) => {
                 <Loader
                     variant={loaderVariant}
                     size={(() => {
-                        if (loaderVariant === 'spinner') {
+                        // NOTE: Exception for each variants goes here
+                        if (loaderVariant === 'default') {
+                            switch (props.size) {
+                                case 'small':
+                                    return remValue * (2 * 0.75);
+                                case 'large':
+                                    return remValue * (3 * 0.75);
+                                default:
+                                    return remValue * (2.5 * 0.75);
+                            }
+                        } else if (loaderVariant === 'spinner') {
                             switch (props.size) {
                                 case 'small':
                                     return remValue * (2 * 0.75);

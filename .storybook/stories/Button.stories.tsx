@@ -33,13 +33,13 @@ export const Primary: Story = {
         },
         loaderVariant: {
             control: 'select',
-            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'ring'],
+            options: ['default', 'ellipsis', 'ellipsis-rolling', 'spinner', 'roller'],
         },
     },
     args: {
         children: 'Action',
         isLoading: false,
-        loaderVariant: 'ellipsis',
+        loaderVariant: 'default',
         variant: 'contained',
         color: 'primary',
         size: 'large',
