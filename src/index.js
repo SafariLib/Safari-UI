@@ -1,2 +1,2 @@
-export { default as Button } from './components/Button/Button';
-export { default as Loader } from './components/Loader/Loader';
+export { default as Button } from './components/Button/Button.jsx';
+export { default as Loader } from './components/Loader/Loader.jsx';

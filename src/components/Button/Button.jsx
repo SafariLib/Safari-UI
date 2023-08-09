@@ -1,8 +1,8 @@
 'use client';
 
 import { useTheme } from '@mui/material';
-import { Loader } from '../../index';
 import { classNames } from '../../utils';
+import Loader from '../Loader/Loader.jsx';
 import { Content, LoaderWrapper, MUIButton } from './styled';
 
 const { SafariUIButton } = classNames;

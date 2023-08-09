@@ -5,11 +5,14 @@
     "eslint.format.enable": true,
     "typescript.preferences.importModuleSpecifier": "relative",
     "javascript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.importModuleSpecifierEnding": "js",
+    "javascript.preferences.importModuleSpecifierEnding": "js",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
         "source.fixAll": true,
         "source.organizeImports": true
     },
     "css.lint.unknownAtRules": "ignore",
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }

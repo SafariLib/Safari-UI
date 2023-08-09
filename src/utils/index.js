@@ -1,2 +1,2 @@
-export { classNames } from './classNames';
-export { isHexColor } from './colorHelper';
+export { classNames } from './classNames.js';
+export { isHexColor } from './colorHelper.js';
