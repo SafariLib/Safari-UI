@@ -1,6 +1,6 @@
 export interface LoaderProps {
     size?: 'small' | 'medium' | 'large' | number | undefined;
-    variant?: 'ellipsis' | 'EllipsisRolling' | 'spinner' | 'roller' | 'ring' | undefined;
+    variant?: 'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller' | undefined;
     color?:
         | 'primary'
         | 'secondary'
@@ -18,7 +18,7 @@ export interface LoaderProps {
  *
  * The size of the loader. If type is number it will be considered as pixels
  *
- * - `variant` _'ellipsis'_ | _'EllipsisRolling'_ | _'spinner'_ | _'roller'_ | _'ring'_ | _undefined_
+ * - `variant` _'default'_ | _'ellipsis'_ | _'ellipsis-rolling'_ | _'spinner'_ | _'roller'_ | _undefined_
  *
  * The loader variant to use.
  *
