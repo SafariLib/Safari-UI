@@ -1,8 +1,9 @@
 import { babel } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { dts } from 'rollup-plugin-dts';
 import preserveDirectives from 'rollup-plugin-preserve-directives';
 
-const config = {
+const jsConfig = {
     external: [
         'react',
         'react-dom',
@@ -37,4 +38,15 @@ const config = {
     ],
 };
 
-export default config;
+const typeConfig = {
+    plugins: [dts()],
+    input: 'src/index.d.ts',
+    output: [
+        {
+            file: 'dist/index.d.ts',
+            format: 'esm',
+        },
+    ],
+};
+
+export default [jsConfig, typeConfig];
