@@ -2,7 +2,7 @@ import type { ButtonProps as MUIButtonProps } from '@mui/material';
 
 export interface ButtonProps extends MUIButtonProps {
     isLoading?: boolean | undefined;
-    loaderVariant?: 'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller' | undefined;
+    loaderVariant?: 'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | undefined;
 }
 
 /**
@@ -11,7 +11,7 @@ export interface ButtonProps extends MUIButtonProps {
  *
  * If true, the button's children will be disabled and show a loader.
  *
- * - `loaderVariant` _'default'_ | _'ellipsis'_ | _'ellipsis-rolling'_ | _'spinner'_ | _'roller'_ | _undefined_
+ * - `loaderVariant` _'default'_ | _'ellipsis'_ | _'ellipsis-rolling'_ | _'spinner'_ | _undefined_
  *
  * The loader variant to use.
  *

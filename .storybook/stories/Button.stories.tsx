@@ -33,7 +33,7 @@ export const Primary: Story = {
         },
         loaderVariant: {
             control: 'select',
-            options: ['default', 'ellipsis', 'ellipsis-rolling', 'spinner', 'roller'],
+            options: ['default', 'ellipsis', 'ellipsis-rolling', 'spinner'],
         },
     },
     args: {

@@ -10,7 +10,7 @@ const { SafariUIButton } = classNames;
 /**
  * @typedef {Object} ButtonProps
  * @property {boolean} [isLoading]
- * @property {'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller'} [loaderVariant]
+ * @property {'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner'} [loaderVariant]
  * @property {React.ReactNode} [children]
  */
 
