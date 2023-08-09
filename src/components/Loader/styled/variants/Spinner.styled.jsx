@@ -7,46 +7,24 @@ export const SpinnerWrapper = styled('div')(
         color: official;
         display: inline-block;
         position: relative;
-        ${(() => {
-            switch (size) {
-                case 'small':
-                    return css`
-                        width: 40px;
-                        height: 40px;
-                    `;
-                case 'medium':
-                    return css`
-                        width: 80px;
-                        height: 80px;
-                    `;
-                case 'large':
-                    return css`
-                        width: 160px;
-                        height: 160px;
-                    `;
-                default:
-                    return css`
-                        width: 80px;
-                        height: 80px;
-                    `;
-            }
-        })()}
+        width: ${Math.round(size)}px;
+        height: ${Math.round(size)}px;
     `,
 );
 
 export const SpinnerDot = styled('div')(
     ({ size, color }) => css`
-        transform-origin: 40px 40px;
+        transform-origin: ${Math.round(size * 0.5)}px ${Math.round(size * 0.5)}px;
         animation: SafariUI-loader-spinner 1.2s linear infinite;
 
         &:after {
             content: ' ';
             display: block;
             position: absolute;
-            top: 3px;
-            left: 37px;
-            width: 6px;
-            height: 18px;
+            top: ${Math.round(size * 0.0375)}px;
+            left: ${Math.round(size * 0.4625)}px;
+            width: ${Math.round(size * 0.075)}px;
+            height: ${Math.round(size * 0.225)}px;
             border-radius: 20%;
             background: ${color};
         }

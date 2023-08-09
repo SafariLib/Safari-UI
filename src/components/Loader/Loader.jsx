@@ -28,6 +28,10 @@ const {
     SafariUILoaderSpinnerDot,
 } = classNames;
 
+// FIXME: Some variants does not render well on small values.
+// - Ring
+// - Roller
+
 /**
  * @typedef {Object} LoaderProps
  * @property {'small' | 'medium' | 'large' | number} [size]

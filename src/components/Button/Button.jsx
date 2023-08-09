@@ -28,13 +28,24 @@ const Button = ({ children, isLoading, loaderVariant, ...props }) => {
                 <Loader
                     variant={loaderVariant}
                     size={(() => {
-                        switch (props.size) {
-                            case 'small':
-                                return remValue * 2;
-                            case 'large':
-                                return remValue * 3;
-                            default:
-                                return remValue * 2.5;
+                        if (loaderVariant === 'spinner') {
+                            switch (props.size) {
+                                case 'small':
+                                    return remValue * (2 * 0.75);
+                                case 'large':
+                                    return remValue * (3 * 0.75);
+                                default:
+                                    return remValue * (2.5 * 0.75);
+                            }
+                        } else {
+                            switch (props.size) {
+                                case 'small':
+                                    return remValue * 2;
+                                case 'large':
+                                    return remValue * 3;
+                                default:
+                                    return remValue * 2.5;
+                            }
                         }
                     })()}
                     color={(() => {

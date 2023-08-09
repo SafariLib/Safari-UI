@@ -6,66 +6,20 @@ export const RingWrapper = styled('div')(
     ({ size }) => css`
         display: inline-block;
         position: relative;
-        ${(() => {
-            switch (size) {
-                case 'small':
-                    return css`
-                        width: 40px;
-                        height: 40px;
-                    `;
-                case 'medium':
-                    return css`
-                        width: 80px;
-                        height: 80px;
-                    `;
-                case 'large':
-                    return css`
-                        width: 160px;
-                        height: 160px;
-                    `;
-                default:
-                    return css`
-                        width: 80px;
-                        height: 80px;
-                    `;
-            }
-        })()}
+        width: ${Math.round(size)}px;
+        height: ${Math.round(size)}px;
     `,
 );
 
-export const RingTrail = styled('div')(({ size, color }) => {
-    let ringSize, border, margin;
-
-    switch (size) {
-        case 'small':
-            ringSize = '32px';
-            border = '4px';
-            margin = '4px';
-            break;
-        case 'medium':
-            ringSize = '64px';
-            border = '8px';
-            margin = '8px';
-            break;
-        case 'large':
-            ringSize = '128px';
-            border = '16px';
-            margin = '16px';
-            break;
-        default:
-            ringSize = '64px';
-            border = '8px';
-            margin = '8px';
-    }
-
-    return css`
+export const RingTrail = styled('div')(
+    ({ size, color }) => css`
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: ${ringSize};
-        height: ${ringSize};
-        margin: ${margin};
-        border: ${border} solid ${color};
+        width: ${Math.round(size * 0.8)}px;
+        height: ${Math.round(size * 0.8)}px;
+        margin: ${Math.round(size * 0.1)}px;
+        border: ${Math.round(size * 0.075)}px solid ${color};
         border-radius: 50%;
         animation: SafariUI-loader-ring-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
         border-color: ${color} transparent transparent transparent;
@@ -90,5 +44,5 @@ export const RingTrail = styled('div')(({ size, color }) => {
                 transform: rotate(360deg);
             }
         }
-    `;
-});
+    `,
+);
