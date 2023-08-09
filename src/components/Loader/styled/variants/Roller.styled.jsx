@@ -1,14 +1,35 @@
 'use client';
 
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css, styled } from '@mui/material';
 
 export const RollerWrapper = styled('div')(
     ({ size }) => css`
         display: inline-block;
         position: relative;
-        width: 80px;
-        height: 80px;
+        ${(() => {
+            switch (size) {
+                case 'small':
+                    return css`
+                        width: 40px;
+                        height: 40px;
+                    `;
+                case 'medium':
+                    return css`
+                        width: 80px;
+                        height: 80px;
+                    `;
+                case 'large':
+                    return css`
+                        width: 160px;
+                        height: 160px;
+                    `;
+                default:
+                    return css`
+                        width: 80px;
+                        height: 80px;
+                    `;
+            }
+        })()}
     `,
 );
 

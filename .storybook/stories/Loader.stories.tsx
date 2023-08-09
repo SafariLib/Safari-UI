@@ -17,11 +17,11 @@ export const Primary: Story = {
     argTypes: {
         size: {
             control: 'select',
-            options: ['small', 'medium', 'large', 'x-large', 'xx-large'],
+            options: ['small', 'medium', 'large'],
         },
         variant: {
             control: 'select',
-            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'rollerTrailing', 'ring'],
+            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'ring'],
         },
         color: {
             control: 'color',

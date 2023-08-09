@@ -1,14 +1,16 @@
 'use client';
 
-import { Button as MUIButton } from '@mui/material';
+import { useTheme } from '@mui/material';
+import { Loader } from '../../index';
 import { classNames } from '../../utils';
+import { Content, LoaderWrapper, MUIButton } from './styled';
 
 const { SafariUIButton } = classNames;
 
 /**
  * @typedef {Object} ButtonProps
  * @property {boolean} [isLoading]
- * @property {'default'} [loaderVariant]
+ * @property {'ellipsis' | 'ellipsisRolling' | 'spinner' | 'roller' | 'ring'} [loaderVariant]
  * @property {React.ReactNode} [children]
  */
 
@@ -16,10 +18,58 @@ const { SafariUIButton } = classNames;
  * @param {ButtonProps}
  * @returns {JSX.Element}
  */
-const Button = ({ children, isLoading, loaderVariant = 'default', ...props }) => (
-    <MUIButton className={SafariUIButton} {...props}>
-        {isLoading ? '' : children}
-    </MUIButton>
-);
+const Button = ({ children, isLoading, loaderVariant, ...props }) => {
+    const { palette, typography } = useTheme();
+    const remValue = typography.fontSize ?? 16;
+
+    return (
+        <MUIButton className={SafariUIButton} {...props}>
+            <LoaderWrapper aria-hidden={!isLoading} isLoading={isLoading}>
+                <Loader
+                    variant={loaderVariant}
+                    size={(() => {
+                        switch (props.size) {
+                            case 'small':
+                                return remValue * 2;
+                            case 'large':
+                                return remValue * 3;
+                            default:
+                                return remValue * 2.5;
+                        }
+                    })()}
+                    color={(() => {
+                        const { color, variant, disabled } = props;
+                        if (disabled) return palette.action.disabled;
+                        if (color === 'primary' && variant === 'contained') return palette.primary.contrastText;
+                        if (color === 'primary' && (variant === 'outlined' || variant === 'text'))
+                            return palette.primary.main;
+                        if (color === 'secondary' && variant === 'contained') return palette.secondary.contrastText;
+                        if (color === 'secondary' && (variant === 'outlined' || variant === 'text'))
+                            return palette.secondary.main;
+                        if (color === 'success' && variant === 'contained') return palette.success.contrastText;
+                        if (color === 'success' && (variant === 'outlined' || variant === 'text'))
+                            return palette.success.main;
+                        if (color === 'error' && variant === 'contained') return palette.error.contrastText;
+                        if (color === 'error' && (variant === 'outlined' || variant === 'text'))
+                            return palette.error.main;
+                        if (color === 'warning' && variant === 'contained') return palette.warning.contrastText;
+                        if (color === 'warning' && (variant === 'outlined' || variant === 'text'))
+                            return palette.warning.main;
+                        if (color === 'info' && variant === 'contained') return palette.info.contrastText;
+                        if (color === 'info' && (variant === 'outlined' || variant === 'text'))
+                            return palette.info.main;
+                        if (variant === 'contained') return palette.common.white;
+                        if (variant === 'outlined') return palette.text.primary;
+                        if (variant === 'text') return palette.text.primary;
+                        return color;
+                    })()}
+                />
+            </LoaderWrapper>
+            <Content aria-hidden={isLoading} isLoading={isLoading}>
+                {children}
+            </Content>
+        </MUIButton>
+    );
+};
 
 export default Button;

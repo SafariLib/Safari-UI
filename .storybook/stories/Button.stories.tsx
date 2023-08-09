@@ -27,17 +27,21 @@ export const Primary: Story = {
             control: 'select',
             options: ['primary', 'secondary', 'success', 'error', 'info', 'warning'],
         },
-
+        size: {
+            control: 'select',
+            options: ['small', 'medium', 'large'],
+        },
         loaderVariant: {
             control: 'select',
-            options: ['default'],
+            options: ['ellipsis', 'ellipsisRolling', 'spinner', 'roller', 'ring'],
         },
     },
     args: {
         children: 'Action',
         isLoading: false,
-        loaderVariant: 'default',
+        loaderVariant: 'ellipsis',
         variant: 'contained',
         color: 'primary',
+        size: 'large',
     },
 };
