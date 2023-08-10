@@ -26,12 +26,12 @@ const jsConfig = {
     input: 'src/index.js',
     output: [
         {
-            file: 'dist/index.cjs.js',
+            file: 'lib/index.cjs.js',
             format: 'cjs',
             interop: 'default',
         },
         {
-            dir: 'dist/module',
+            dir: 'lib/module',
             format: 'esm',
             preserveModules: true,
         },
@@ -43,7 +43,7 @@ const typeConfig = {
     input: 'src/index.d.ts',
     output: [
         {
-            file: 'dist/index.d.ts',
+            file: 'lib/index.d.ts',
             format: 'esm',
         },
     ],

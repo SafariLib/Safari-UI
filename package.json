@@ -2,17 +2,17 @@
     "name": "@safari-lib/safari-ui",
     "author": "BenoitSafari",
     "description": "Simple component library for React/NextJS Web development using MUI",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "homepage": "https://github.com/SafariLib/Safari-UI",
     "license": "MIT",
-    "main": "dist/index.cjs.js",
-    "module": "dist/module/index.js",
-    "types": "dist/index.d.ts",
+    "main": "lib/index.cjs.js",
+    "module": "lib/module/index.js",
+    "types": "lib/index.d.ts",
     "readme": "README.md",
     "files": [
         "README.md",
         "LICENSE",
-        "src"
+        "lib"
     ],
     "engines": {
         "node": ">=16.0.0"
@@ -32,7 +32,7 @@
     "scripts": {
         "dev": "storybook dev -p 6006",
         "test": "echo \"No test specified\"",
-        "build": "rimraf dist && rollup -c",
+        "build": "rimraf lib && rollup -c",
         "build-storybook": "storybook build",
         "clean-node": "rimraf node_modules && npm i",
         "deploy": "npm run build && npm publish --access public"
