@@ -1,6 +1,6 @@
 <!-- markdownlint-disable-next-line -->
 <p align="center">
-    <img width="200" src="doc/logo.png" alt="SafariUI logo">
+    <img width="200" src="https://raw.githubusercontent.com/SafariLib/Safari-UI/master/doc/logo.png" alt="SafariUI logo">
 </p>
 <h1 align="center">Safari-UI</h1>
 
@@ -13,18 +13,22 @@
 -   Official [**MUI documentation**](https://mui.com/material-ui/getting-started/)
 
 # Installation
+
 Install the library using npm on your **React/NextJS** project
+
 ```
 npm i @safari-lib/safari-ui
 ```
+
 ### Dependencies
+
 You need [**MaterialUI**](https://mui.com/material-ui/getting-started/installation/) to work with **Safari-UI**.  
 The following package are needed:
-- @emotion/react
-- @emotion/styled
-- @mui/icons-material
-- @mui/material
 
+-   @emotion/react
+-   @emotion/styled
+-   @mui/icons-material
+-   @mui/material
 
 ---
 
