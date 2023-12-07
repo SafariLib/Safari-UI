@@ -2,7 +2,7 @@
     "name": "@safari-lib/safari-ui",
     "author": "BenoitSafari",
     "description": "Simple component library for React/NextJS Web development using MUI",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "homepage": "https://github.com/SafariLib/Safari-UI",
     "license": "MIT",
     "main": "lib/index.cjs.js",
