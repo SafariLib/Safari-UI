@@ -14,5 +14,5 @@ module.exports = {
         setSpreadProperties: true, // Assume that spread properties have no side effects
         skipForOfIteratorClosing: true, // Assume that for-of loops do not need to close their iterators
     },
-    presets: [['@babel/preset-env'], ['@babel/preset-react', { runtime: 'automatic' }]],
+    presets: [['@babel/preset-typescript'], ['@babel/preset-env'], ['@babel/preset-react', { runtime: 'automatic' }]],
 };

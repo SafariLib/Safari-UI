@@ -9,7 +9,7 @@ const config: StorybookConfig = {
         name: '@storybook/react-vite',
         options: {},
     },
-    stories: ['./stories/**/*.stories.@(js|tsx)', './stories/**/*.stories.mdx'],
+    stories: ['./stories/**/*.stories.@(ts|tsx)', './stories/**/*.stories.mdx'],
 
     addons: [
         '@storybook/addon-essentials',

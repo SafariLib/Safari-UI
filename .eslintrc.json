@@ -1,7 +1,30 @@
 {
-    "plugins": ["prefer-arrow"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "prefer-arrow",
+        "react",
+        "react-hooks",
+        "import"
+    ],
     "rules": {
-        "no-var": "error",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/consistent-type-definitions": [
+            "warn",
+            "type"
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "warn",
+            {
+                "fixStyle": "inline-type-imports",
+                "prefer": "type-imports"
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "warn",
         "prefer-arrow/prefer-arrow-functions": [
             "error",
             {
@@ -24,8 +47,13 @@
                 "allowArrowFunctions": true
             }
         ],
-        "no-multi-spaces": ["error"],
-        "eol-last": ["error", "always"],
+        "no-multi-spaces": [
+            "error"
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
         "no-multiple-empty-lines": [
             "warn",
             {
@@ -33,5 +61,13 @@
             }
         ]
     },
-    "extends": ["eslint:recommended", "prettier", "react-app", "plugin:storybook/recommended"]
+    "extends": [
+        "eslint:recommended",
+        "@typescript-eslint",
+        "eslint-config-prettier",
+        "prettier",
+        "react-app",
+        "plugin:react/recommended",
+        "plugin:storybook/recommended"
+    ]
 }

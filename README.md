@@ -8,8 +8,8 @@
 
 **Safari-UI** is a simple component library for React Web development using MUI.
 
--   Safari-UI [**documentation**](https://safarilib.github.io/Safari-UI/)
 -   Safari-UI [**npm repo**](https://www.npmjs.com/package/@safari-lib/safari-ui?activeTab=readme)
+-   Safari-UI [**Online Storybook**](https://safarilib.github.io/Safari-UI/)
 -   Official [**MUI documentation**](https://mui.com/material-ui/getting-started/)
 
 # Installation

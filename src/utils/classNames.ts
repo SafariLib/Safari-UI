@@ -1,0 +1,15 @@
+export const classNames = {
+    SafariUI: 'SafariUI' as const,
+    SafariUIDisabled: 'SafariUI-disabled' as const,
+    SafariUIButton: 'SafariUI-btn' as const,
+    SafariUIButtonText: 'SafariUI-btn-text' as const,
+    SafariUIButtonOutlined: 'SafariUI-btn-outlined' as const,
+    SafariUILoader: 'SafariUI-loader' as const,
+    SafariUILoaderEllipsis: 'SafariUI-loader-ellipsis' as const,
+    SafariUILoaderEllipsisDot: 'SafariUI-loader-ellipsis-dot' as const,
+    SafariUILoaderEllipsisRolling: 'SafariUI-loader-ellipsisRolling' as const,
+    SafariUILoaderSpinner: 'SafariUI-loader-spinner' as const,
+    SafariUILoaderSpinnerDot: 'SafariUI-loader-spinner-dot' as const,
+    SafariUILoaderRoller: 'SafariUI-loader-roller' as const,
+    SafariUILoaderRollerDot: 'SafariUI-loader-roller-dot' as const,
+};
