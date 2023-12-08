@@ -5,11 +5,10 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import { dts } from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-
-const packageJson = require('./package.json');
+import packageJson from './package.json' assert { type: 'json' };
 
 const jsConfig = {
-    input: 'src/index.ts',
+    input: './src/index.ts',
     external: [
         'react',
         'react-dom',
@@ -20,10 +19,14 @@ const jsConfig = {
         '@mui/material',
     ],
     plugins: [
-        peerDepsExternal(),
+        peerDepsExternal(), // Should be placed before other plugins that transform code.
         nodeResolve(),
         commonjs(),
-        typescript({ tsconfig: './tsconfig.json' }),
+        typescript({
+            tsconfig: './tsconfig.json',
+            sourceMap: true,
+            inlineSources: true,
+        }),
         babel({ babelHelpers: 'bundled' }),
         terser(),
     ],
@@ -51,9 +54,9 @@ const jsConfig = {
 };
 
 const typeConfig = {
-    input: 'src/index.ts',
+    input: 'lib/types/index.d.ts',
+    output: [{ file: 'lib/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    output: [{ file: 'lib/types.d.ts', format: 'es' }],
 };
 
 export default [jsConfig, typeConfig];

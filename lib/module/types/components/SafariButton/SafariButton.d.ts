@@ -6,20 +6,6 @@ export interface SafariButtonProps extends Omit<ButtonProps, 'disableElevation'>
     elevation?: boolean;
     textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'initial';
 }
-/**
- * Extends MUI Button with a loading state.
- * - `isLoading` _boolean_
- *
- * If true, the button's children will be disabled and show a loader.
- *
- * - `loaderVariant` _'default'_ | _'ellipsis'_ | _'ellipsis-rolling'_ | _'spinner'_ | _undefined_
- *
- * The loader variant to use.
- *
- * **MUI Button API**
- *
- * https://mui.com/material-ui/api/button/
- */
 declare const SafariButton: FC<SafariButtonProps>;
 export declare const LoaderWrapper: import("@emotion/styled").StyledComponent<import("@mui/system").MUIStyledCommonProps<import("@mui/material").Theme> & {
     isLoading?: boolean | undefined;
