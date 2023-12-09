@@ -17,7 +17,7 @@ const {
 // FIXME: Some variants does not render well on small values.
 // - Roller
 
-export interface SafariLoaderProps {
+export interface LoaderProps {
     size?: 'small' | 'medium' | 'large' | number | undefined;
     variant?: 'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | 'roller' | undefined;
     color?:
@@ -45,7 +45,7 @@ export interface SafariLoaderProps {
  *  - https://loading.io/css/
  *  - https://cssloaders.github.io/
  */
-const SafariLoader: FC<SafariLoaderProps> = ({ variant = 'ring', size = 'medium', color = 'primary' }) => {
+const Loader: FC<LoaderProps> = ({ variant = 'ring', size = 'medium', color = 'primary' }) => {
     const theme = useTheme();
 
     const isHexColor = (color: React.CSSProperties['color']) => /^#([0-9A-F]{3}){1,2}$/i.test(color!);
@@ -154,4 +154,4 @@ export const Wrapper = styled('div')(
     `,
 );
 
-export default SafariLoader;
+export default Loader;

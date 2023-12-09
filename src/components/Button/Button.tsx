@@ -1,13 +1,13 @@
 import { css, styled, useTheme } from '@mui/material';
 import React, { FC } from 'react';
 import { classNames } from '../../utils';
-import Loader from '../SafariLoader/SafariLoader';
+import Loader from '../Loader/Loader';
 
 const { SafariUIButton } = classNames;
 
-import { Button as MUIButton, type ButtonProps } from '@mui/material';
+import { Button as MUIButton, type ButtonProps as MUIButtonProps } from '@mui/material';
 
-export interface SafariButtonProps extends Omit<ButtonProps, 'disableElevation'> {
+export interface ButtonProps extends Omit<MUIButtonProps, 'disableElevation'> {
     isLoading?: boolean | undefined;
     loaderVariant?: 'default' | 'ellipsis' | 'ellipsis-rolling' | 'spinner' | undefined;
     elevation?: boolean;
@@ -28,26 +28,27 @@ export interface SafariButtonProps extends Omit<ButtonProps, 'disableElevation'>
  *
  * https://mui.com/material-ui/api/button/
  */
-const SafariButton: FC<SafariButtonProps> = ({
+const Button: FC<ButtonProps> = ({
     children,
     isLoading,
     loaderVariant = 'default',
     elevation,
     textTransform = 'initial',
+    size = 'small',
     ...props
 }) => {
     const { palette, typography } = useTheme();
     const remValue = typography.fontSize ?? 16;
 
     return (
-        <MUIButton className={SafariUIButton} disableElevation={!elevation} {...props}>
+        <SafariButton className={SafariUIButton} disableElevation={!elevation} {...props}>
             <LoaderWrapper aria-hidden={!isLoading} isLoading={isLoading}>
                 <Loader
                     variant={loaderVariant}
                     size={(() => {
                         // NOTE: Exception for each variants goes here
                         if (loaderVariant === 'default') {
-                            switch (props.size) {
+                            switch (size) {
                                 case 'small':
                                     return remValue * (2 * 0.75);
                                 case 'large':
@@ -56,7 +57,7 @@ const SafariButton: FC<SafariButtonProps> = ({
                                     return remValue * (2.5 * 0.75);
                             }
                         } else if (loaderVariant === 'spinner') {
-                            switch (props.size) {
+                            switch (size) {
                                 case 'small':
                                     return remValue * (2 * 0.75);
                                 case 'large':
@@ -65,7 +66,7 @@ const SafariButton: FC<SafariButtonProps> = ({
                                     return remValue * (2.5 * 0.75);
                             }
                         } else {
-                            switch (props.size) {
+                            switch (size) {
                                 case 'small':
                                     return remValue * 2;
                                 case 'large':
@@ -106,7 +107,7 @@ const SafariButton: FC<SafariButtonProps> = ({
             <Content aria-hidden={isLoading} isLoading={isLoading} textTransform={textTransform}>
                 {children}
             </Content>
-        </MUIButton>
+        </SafariButton>
     );
 };
 
@@ -119,18 +120,18 @@ export const LoaderWrapper = styled('div')<{ isLoading?: boolean }>(
     `,
 );
 
-export const Content = styled('div')<{ isLoading?: boolean; textTransform: SafariButtonProps['textTransform'] }>(
+export const Content = styled('div')<{ isLoading?: boolean; textTransform: ButtonProps['textTransform'] }>(
     ({ isLoading, textTransform }) => css`
         opacity: ${isLoading ? 0 : 1};
         text-transform: ${textTransform};
     `,
 );
 
-export const Button = styled(MUIButton)(css`
+export const SafariButton = styled(MUIButton)(css`
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 `);
 
-export default SafariButton;
+export default Button;

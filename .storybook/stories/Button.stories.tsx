@@ -1,15 +1,15 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
-import { SafariButton, SafariButtonProps } from '../../src';
+import { Button, ButtonProps } from '../../src';
 
 const meta = {
-    title: 'Buttons/SafariButton',
-    component: SafariButton,
-} satisfies Meta<SafariButtonProps>;
+    title: 'Buttons/Button',
+    component: Button,
+} satisfies Meta<ButtonProps>;
 
 export default meta;
 
-export const Safari_Button: StoryFn<SafariButtonProps> = (args: SafariButtonProps) => <SafariButton {...args} />;
+export const Safari_Button: StoryFn<ButtonProps> = (args: ButtonProps) => <Button {...args} />;
 
 Safari_Button.parameters = {
     layout: 'centered',
@@ -49,6 +49,6 @@ Safari_Button.args = {
     variant: 'contained',
     loaderVariant: 'default',
     color: 'primary',
-    size: 'large',
+    size: 'small',
     textTransform: 'initial',
 };

@@ -1,2 +1,3 @@
-export { default as SafariButton, type SafariButtonProps } from './components/SafariButton/SafariButton';
-export { default as SafariLoader, type SafariLoaderProps } from './components/SafariLoader/SafariLoader';
+export { default as Button, type ButtonProps as ButtonProps } from './components/Button/Button';
+export { default as Loader, type LoaderProps as LoaderProps } from './components/Loader/Loader';
+export { default as YTPlayer, type YTPlayerProps } from './components/YTPlayer/YTPlayer';

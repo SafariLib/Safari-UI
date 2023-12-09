@@ -1,15 +1,15 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
-import { SafariLoader, SafariLoaderProps } from '../../src';
+import { Loader, LoaderProps } from '../../src';
 
 const meta = {
-    title: 'Loading/SafariLoader',
-    component: SafariLoader,
-} satisfies Meta<SafariLoaderProps>;
+    title: 'Loading/Loader',
+    component: Loader,
+} satisfies Meta<LoaderProps>;
 
 export default meta;
 
-export const Safari_Loader: StoryFn<SafariLoaderProps> = (args: SafariLoaderProps) => <SafariLoader {...args} />;
+export const Safari_Loader: StoryFn<LoaderProps> = (args: LoaderProps) => <Loader {...args} />;
 
 Safari_Loader.parameters = {
     layout: 'centered',

@@ -6,9 +6,9 @@
     "typescript.preferences.importModuleSpecifier": "relative",
     "javascript.preferences.importModuleSpecifier": "relative",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll": true,
-        "source.organizeImports": true
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
     },
     "css.lint.unknownAtRules": "ignore",
     "typescript.updateImportsOnFileMove.enabled": "always",
