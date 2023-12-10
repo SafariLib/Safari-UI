@@ -34,14 +34,14 @@ const Button: FC<ButtonProps> = ({
     loaderVariant = 'default',
     elevation,
     textTransform = 'initial',
-    size = 'small',
+    size,
     ...props
 }) => {
     const { palette, typography } = useTheme();
     const remValue = typography.fontSize ?? 16;
 
     return (
-        <SafariButton className={SafariUIButton} disableElevation={!elevation} {...props}>
+        <SafariButton className={SafariUIButton} disableElevation={!elevation} size={size} {...props}>
             <LoaderWrapper aria-hidden={!isLoading} isLoading={isLoading}>
                 <Loader
                     variant={loaderVariant}
@@ -50,22 +50,22 @@ const Button: FC<ButtonProps> = ({
                         if (loaderVariant === 'default') {
                             switch (size) {
                                 case 'small':
-                                    return remValue * (2 * 0.75);
+                                    return remValue * (2 * 0.6);
                                 case 'large':
-                                    return remValue * (3 * 0.75);
+                                    return remValue * (3 * 0.6);
                                 default:
-                                    return remValue * (2.5 * 0.75);
+                                    return remValue * (2.5 * 0.6);
                             }
                         } else if (loaderVariant === 'spinner') {
                             switch (size) {
                                 case 'small':
-                                    return remValue * (2 * 0.75);
+                                    return remValue * (2 * 0.7);
                                 case 'large':
-                                    return remValue * (3 * 0.75);
+                                    return remValue * (3 * 0.7);
                                 default:
-                                    return remValue * (2.5 * 0.75);
+                                    return remValue * (2.5 * 0.7);
                             }
-                        } else {
+                        } else if (loaderVariant === 'ellipsis') {
                             switch (size) {
                                 case 'small':
                                     return remValue * 2;
@@ -73,6 +73,15 @@ const Button: FC<ButtonProps> = ({
                                     return remValue * 3;
                                 default:
                                     return remValue * 2.5;
+                            }
+                        } else {
+                            switch (size) {
+                                case 'small':
+                                    return remValue * (2 * 0.8);
+                                case 'large':
+                                    return remValue * (3 * 0.8);
+                                default:
+                                    return remValue * (2.5 * 0.8);
                             }
                         }
                     })()}
@@ -132,6 +141,16 @@ export const SafariButton = styled(MUIButton)(css`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 5rem;
+    &.MuiButton-sizeSmall {
+        padding: 0.1rem 0.8rem;
+    }
+    &.MuiButton-sizeMedium {
+        padding: 0.2rem 1rem;
+    }
+    &.MuiButton-sizeLarge {
+        padding: 0.4rem 1.4rem;
+    }
 `);
 
 export default Button;

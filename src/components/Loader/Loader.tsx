@@ -88,7 +88,6 @@ const Loader: FC<LoaderProps> = ({ variant = 'ring', size = 'medium', color = 'p
             case 'info':
                 return theme.palette.info.main;
             default:
-                console.log(color);
                 if (isHexColor(color)) return color;
                 console.warn(`Invalid color prop: ${color}. Defaulting to primary color.`);
                 return theme.palette.primary.main;
